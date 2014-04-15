@@ -1,0 +1,31 @@
+{
+  "name": "xmlhttprequest.jsx",
+  "version": "0.1.0",
+  "description": "xmlhttprequest module for JSX",
+  "main": "index.js",
+  "scripts": {
+    "test": "jsx --add-search-path lib --test t/xmlhttprequest.jsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yosuke-furukawa/xmlhttprequest.jsx"
+  },
+  "keywords": [
+    "xmlhttprequest",
+    "xhr",
+    "jsx"
+  ],
+  "author": "yosuke-furukawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yosuke-furukawa/xmlhttprequest.jsx/issues"
+  },
+  "homepage": "https://github.com/yosuke-furukawa/xmlhttprequest.jsx",
+  "dependencies": {
+    "xmlhttprequest": "^1.6.0"
+  },
+  "devDependencies": {
+    "jsx": "^0.9.87",
+    "nodejs.jsx": "^0.1.4"
+  }
+}
