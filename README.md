@@ -16,18 +16,22 @@ import "xmlhttprequest.jsx/xmlhttprequest.jsx";
 
 class _Test extends TestCase {
   function testXHR() : void {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      log("State: " + this.readyState);
+    this.async((async : AsyncContext)->{
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        log("State: " + xhr.readyState as string);
 
-      if (this.readyState == 4) {
-        log("Complete.\nBody length: " + this.responseText.length);
-        log("Body:\n" + this.responseText);
-      }
-    }
+        if (xhr.readyState == 4) {
+          log("Complete.\nBody length: " + xhr.responseText.length as string);
+          log("Body:\n" + xhr.responseText);
+          this.expect(xhr.status, "XHR status is 200").toBe(200);
+          async.done();
+        }
+      };
 
-    xhr.open("GET", "http://driverdan.com");
-    xhr.send();
+      xhr.open("GET", "http://www.google.co.jp");
+      xhr.send();
+    }, 1000);
   }
 }
 
